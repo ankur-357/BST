@@ -1,7 +1,18 @@
 #include<bits/stdc++.h>
-
 using namespace std;
-int main(){
 
 
+// Insert function definition.
+BST* Insert(BST* root, int value) {
+    if (!root) {
+        return new BST(value);
+    }
+    if (value > root->data) {
+        root->right = Insert(root->right, value);
+    }
+    else if (value < root->data) {
+        root->left = Insert(root->left, value);
+    }
+    return root;
 }
+
