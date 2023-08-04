@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int minElement(Node *root){
+  if(!root){
+        return -1;
+    }
+  while(root->left){
+    root = root->left;
+  }
+  return root->data;
+}
+
+int maxElement(Node *root){
+  if(!root){
+      return -1;
+  }
+  while(root->right){
+    root = root->right;
+  }
+  return root->data;
+}
